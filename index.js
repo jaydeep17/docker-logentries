@@ -157,11 +157,11 @@ function cli() {
       'add': 'a'
     },
     default: {
-      json: false,
+      json: typeof process.env.LOGENTRIES_JSON !== 'undefined',
       newline: true,
-      stats: true,
+      stats: typeof process.env.LOGENTRIES_STATS !== 'undefined',
       logs: true,
-      dockerEvents: true,
+      dockerEvents: typeof process.env.LOGENTRIES_DOCKER_EVENTS !== 'undefined',
       statsinterval: 30,
       add: [ 'host=' + os.hostname() ],
       token: process.env.LOGENTRIES_TOKEN,
